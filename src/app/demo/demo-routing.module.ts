@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { LayoutSidebarComponent } from "../ui/containers/layout-sidebar/layout-sidebar.component";
 import { Demo0Component } from "./components/demo0/demo0.component";
 import { VariablesComponent } from "./components/ES6/01-variables/01-variables.component";
+import { TypesComponent } from "./components/Typescript/01-Types/01-types.component";
 
 const routes: Routes = [
   {
@@ -12,9 +13,9 @@ const routes: Routes = [
     data: {
       links: [
         { label: "Introduction", url: "introduction" },
-        { label: "ES6 Variables", url: "es6-variables" }
-        /*{ label: 'Draw on a canvas', url: 'draw-canvas' },
-      { label: 'Network Request', url: 'network-request' },
+        { label: "ES6 Variables", url: "es6-variables" },
+        { label: 'Javascript types', url: 'javascript-types' },
+      /*{ label: 'Network Request', url: 'network-request' },
       { label: 'Text Input', url: 'text-input' },
       { label: 'Creating Observables', url: 'creating-observables' },
       { label: 'Subjects', url: 'subjects' },
@@ -24,9 +25,9 @@ const routes: Routes = [
     children: [
       { path: "", pathMatch: "full", redirectTo: "introduction" },
       { path: "introduction", component: Demo0Component },
-      { path: "es6-variables", component: VariablesComponent }
-      /*{ path: 'draw-canvas', component: Demo3Component },
-    { path: 'network-request', component: Demo4Component },
+      { path: "es6-variables", component: VariablesComponent },
+      { path: 'javascript-types', component: TypesComponent },
+    /*{ path: 'network-request', component: Demo4Component },
     { path: 'text-input', component: Demo5Component },
     { path: 'creating-observables', component: Demo6Component },
     { path: 'subjects', component: Demo7Component },
