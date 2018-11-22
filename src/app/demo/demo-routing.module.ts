@@ -5,6 +5,7 @@ import { LayoutSidebarComponent } from "../ui/containers/layout-sidebar/layout-s
 import { Demo0Component } from "./components/demo0/demo0.component";
 import { VariablesComponent } from "./components/ES6/01-variables/01-variables.component";
 import { TypesComponent } from "./components/Typescript/01-Types/01-types.component";
+import { ArrowFunctionComponent } from "./components/ES6/02-arroy-functions/02-arrow-functions.component";
 
 const routes: Routes = [
   {
@@ -14,9 +15,9 @@ const routes: Routes = [
       links: [
         { label: "Introduction", url: "introduction" },
         { label: "ES6 Variables", url: "es6-variables" },
-        { label: 'Javascript types', url: 'javascript-types' },
-      /*{ label: 'Network Request', url: 'network-request' },
-      { label: 'Text Input', url: 'text-input' },
+        { label: "Javascript types", url: "javascript-types" },
+        { label: "Fat arrows", url: "es6-fat-arrow" }
+        /*{ label: 'Text Input', url: 'text-input' },
       { label: 'Creating Observables', url: 'creating-observables' },
       { label: 'Subjects', url: 'subjects' },
       { label: 'Extra Exercises', url: 'extra-exercises' },*/
@@ -26,8 +27,9 @@ const routes: Routes = [
       { path: "", pathMatch: "full", redirectTo: "introduction" },
       { path: "introduction", component: Demo0Component },
       { path: "es6-variables", component: VariablesComponent },
-      { path: 'javascript-types', component: TypesComponent },
-    /*{ path: 'network-request', component: Demo4Component },
+      { path: "javascript-types", component: TypesComponent },
+      { path: "es6-fat-arrow", component: ArrowFunctionComponent }
+      /*{ path: 'network-request', component: Demo4Component },
     { path: 'text-input', component: Demo5Component },
     { path: 'creating-observables', component: Demo6Component },
     { path: 'subjects', component: Demo7Component },
