@@ -1,8 +1,7 @@
 export const lesson = {
-  title: "Javascript Typing",
+  title: "Arrows Functions",
   description: [
-    `we need to be able to work with some of the simplest units of data: numbers, 
-strings, structures, boolean values, and the like.`
+    `On this sections you will learn about the new way to define function with the fat arrow operator "=>".`
   ],
   showContent: false,
   showResult: false

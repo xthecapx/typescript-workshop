@@ -6,6 +6,7 @@ import { Demo0Component } from "./components/demo0/demo0.component";
 import { VariablesComponent } from "./components/ES6/01-variables/01-variables.component";
 import { TypesComponent } from "./components/Typescript/01-Types/01-types.component";
 import { ArrowFunctionComponent } from "./components/ES6/02-arroy-functions/02-arrow-functions.component";
+import { RestSpreadComponent } from "./components/ES6/03-rest-spread/03-rest-spread.component";
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
         { label: "Introduction", url: "introduction" },
         { label: "ES6 Variables", url: "es6-variables" },
         { label: "Javascript types", url: "javascript-types" },
-        { label: "Fat arrows", url: "es6-fat-arrow" }
+        { label: "Fat arrows", url: "es6-fat-arrow" },
+        { label: "Spread/Rest", url: "es6-spread-rest" }
         /*{ label: 'Text Input', url: 'text-input' },
       { label: 'Creating Observables', url: 'creating-observables' },
       { label: 'Subjects', url: 'subjects' },
@@ -28,7 +30,8 @@ const routes: Routes = [
       { path: "introduction", component: Demo0Component },
       { path: "es6-variables", component: VariablesComponent },
       { path: "javascript-types", component: TypesComponent },
-      { path: "es6-fat-arrow", component: ArrowFunctionComponent }
+      { path: "es6-fat-arrow", component: ArrowFunctionComponent },
+      { path: "es6-spread-rest", component: RestSpreadComponent }
       /*{ path: 'network-request', component: Demo4Component },
     { path: 'text-input', component: Demo5Component },
     { path: 'creating-observables', component: Demo6Component },

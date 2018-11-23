@@ -9,6 +9,7 @@ import { Demo0Component } from "./components/demo0/demo0.component";
 import { VariablesComponent } from "./components/ES6/01-variables/01-variables.component";
 import { TypesComponent } from "./components/Typescript/01-Types/01-types.component";
 import { ArrowFunctionComponent } from "./components/ES6/02-arroy-functions/02-arrow-functions.component";
+import { RestSpreadComponent } from "./components/ES6/03-rest-spread/03-rest-spread.component";
 
 @NgModule({
   imports: [AppSharedModule, DemoRoutingModule],
@@ -16,7 +17,8 @@ import { ArrowFunctionComponent } from "./components/ES6/02-arroy-functions/02-a
     Demo0Component,
     VariablesComponent,
     TypesComponent,
-    ArrowFunctionComponent
+    ArrowFunctionComponent,
+    RestSpreadComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
