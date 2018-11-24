@@ -16,6 +16,7 @@ export class RestSpreadComponent {
   public readonly activity6 = activities.activity6;
   public readonly activity7 = activities.activity7;
   public readonly activity8 = activities.activity8;
+  public readonly activity9 = activities.activity9;
 
   // Store the result of the activities
   public results1: any;
@@ -26,6 +27,7 @@ export class RestSpreadComponent {
   public results6: any;
   public results7: any;
   public results8: any;
+  public results9: any;
 
   // Exercise one
   public exerciseOne() {
@@ -129,7 +131,7 @@ export class RestSpreadComponent {
   }
 
   // Exercise eigth
-  public excersieEigth() {
+  public exerciseEigth() {
     // Create a function to return the number of animals but not the first
     const animals = ["The total of animals is: ", "🐯", "🐰", "🐘", "🐴", "🐥"];
     /* function listAnimals() {
@@ -147,13 +149,21 @@ export class RestSpreadComponent {
       return a + rest.length;
     };
 
-    this.results8 = listAnimals(
-      "The total of animals is: ",
-      "🐯",
-      "🐰",
-      "🐘",
-      "🐴",
-      "🐥"
-    );
+    this.results8 = listAnimals("The total of animals is: ", "🐯", "🐰", "🐘", "🐴", "🐥");
+  }
+
+  // Exercise nine
+  public exerciseNine() {
+    const user = { name: "Shivek Khurana" };
+    const dynamicKey = "wearsSpectacles";
+
+    // var updatedUserDinamyc = {
+    //   name: user.name
+    // };
+    // updatedUserDinamyc[dynamicKey] = true;
+
+    const updatedUserDinamyc = { ...user, [dynamicKey]: true };
+
+    this.results9 = updatedUserDinamyc;
   }
 }

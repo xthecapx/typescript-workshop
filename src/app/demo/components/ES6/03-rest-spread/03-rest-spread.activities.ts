@@ -188,9 +188,7 @@ const args2 = { name: "Aura" };`
 
 export const activity8 = {
   title: "Destructiring in practice #8",
-  description: [
-    "Create a function to return the number of arguments but not the first"
-  ],
+  description: ["Create a function to return the number of arguments but not the first"],
   solution: `ES5;
 function listAnimals() {
   var animals = Array.prototype.slice.call(arguments, 1);
@@ -226,6 +224,33 @@ const listAnimals = (a, ...rest) => {
     {
       step: "Click the button and verify the answer",
       code: `"The total of animals is: 5"`
+    }
+  ]
+};
+
+export const activity9 = {
+  title: "Dynamic property object #9",
+  description: ["Assign a dynamic key to the object"],
+  solution: `ES5;
+var updatedUserDinamyc = {
+  name: user.name
+};
+updatedUserDinamyc[dynamicKey] = true;
+
+* ES6:
+const updatedUserDinamyc = { ...user, [dynamicKey]: true };`,
+  steps: [
+    {
+      step: `Step 1: Assign a dynamic key to the following object`,
+      code: `const user = { name: "Shivek Khurana" };
+const dynamicKey = "wearsSpectacles";`
+    },
+    {
+      step: `Step 2: Hit the button and verify the answer`,
+      code: `Answer: {
+  "name": "Shivek Khurana",
+  "wearsSpectacles": true
+}`
     }
   ]
 };
