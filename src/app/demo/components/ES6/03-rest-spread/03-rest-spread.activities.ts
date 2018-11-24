@@ -1,6 +1,9 @@
 export const lesson = {
   title: "Destructing/Rest operator",
-  description: [`On this section you will learn the new dot operator "..."`],
+  description: [
+    `On this section you will learn the new dot operator "..."`,
+    'Use the class on: ".src/app/demo/components/ES6/03-rest-spread/03-rest-spread.component'
+  ],
   showContent: false,
   showResult: false
 };
@@ -61,7 +64,7 @@ const obj1 = { a, b, c, d };`,
 
 export const activity3 = {
   title: "Javascript arrays #3",
-  description: ["Create new variables for each element on an array"],
+  description: ["Create new variables for each element of the array"],
   solution: `ES5:
 var a = iterable[0];
 var b = iterable[1];
@@ -110,7 +113,7 @@ ES6:
 newArray.push(...numbersE);`,
   steps: [
     {
-      step: `Step 1: Append appendMe array in to the newArray`,
+      step: `Step 1: Append "appendMe" array in to the "newArray" array`,
       code: `let appendMe = [1, 2, 3];
 let newArray = [55, 20];`
     },
@@ -157,7 +160,7 @@ let { city: c, state: s, zip: z } = getAddress();`,
 export const activity7 = {
   title: "Destructiring in practice #7",
   description: [
-    "Create a method and pass args, args2 as parameters. return the name an age in a single array. the default value for age parameter is 20"
+    "Create a method and pass the variables args, args2 as parameters. return a string with the name an age. the default value for the age should be 20"
   ],
   solution: `ES5;
 function myName (obj) {
@@ -218,7 +221,7 @@ const listAnimals = (a, ...rest) => {
 );`
     },
     {
-      step: `Step 2: Created the required method before it's call`,
+      step: `Step 2: Create the required function (listAnimals)`,
       code: `Create a function to return the number of arguments but not the first`
     },
     {

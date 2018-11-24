@@ -1,6 +1,9 @@
 export const lesson = {
   title: "Looping with javascript",
-  description: [`On this sections we will understand how to loop data with Javascript`],
+  description: [
+    `On this sections you will understand how to loop with Javascript`,
+    'Use the class on: ".src/app/demo/components/ES6/04-iterate/04-iterate.component";'
+  ],
   showContent: false,
   showResult: false
 };
@@ -233,7 +236,7 @@ const findingObject = constructicons.find(isEqualOnProperty("name", "Long Haul")
 * Find return the value after found it and stop the iteration`,
   steps: [
     {
-      step: `Step 1: Use the variable (const constructicons) of the last excersice to complete this excercise`,
+      step: `Step 1: Use the variable (const constructicons) of the last excersice to complete this.`,
       code: `constructicons`
     },
     {
@@ -252,7 +255,7 @@ const findingObject = constructicons.find(isEqualOnProperty("name", "Long Haul")
 
 export const activity5 = {
   title: "Javascript loops #5",
-  description: ["Remove all the numbers one from the array"],
+  description: ["Remove all the 1 from the array"],
   solution: `* ES5:
 var numbersDifferent = [];
 for (var i = 0, len = userIds.length; i < len; i++) {
@@ -273,7 +276,7 @@ const notEqual = findNumber => filteringNumber => findNumber !== filteringNumber
 const numbersDifferent = userIds.filter(notEqual(1));`,
   steps: [
     {
-      step: `Step 1: Remove all the numbers one from the following array`,
+      step: `Step 1: Remove all the 1 from the following array`,
       code: `const userIds = [1, 5, 7, 3, 6, 1];`
     },
     {
@@ -305,7 +308,8 @@ const updatedPosts = posts.map(p => (p.id !== 1 ? p : { ...p, title: "Updated Ti
 * Poetry: Functional programming
 const updateTitleOfElementWithId = ({ idValue, newTitle }) => obj =>
   obj.id !== idValue ? obj : { ...obj, title: newTitle };
-const updatedPosts = posts.map(updateTitleOfElementWithId({ idValue: 1, newTitle: "Updated Title 1" }));
+const updatedPosts = posts
+                      .map(updateTitleOfElementWithId({ idValue: 1, newTitle: "Updated Title 1" }));
 
 `,
   steps: [
@@ -356,11 +360,10 @@ const userWithoutPassword = Object.keys(userObject)
   .reduce(mergeCollection, {});
 
 * Best solution:
-const reduceWithoutKey = (object, keyToDelete) => (accumulator, currentKey) => {
+const removePropertyOfObject = (object, keyToDelete) => (accumulator, currentKey) => {
   return currentKey === keyToDelete ? accumulator : { ...accumulator, [currentKey]: object[currentKey] };
 };
-
-const userWithoutPassword = Object.keys(userObject).reduce(reduceWithoutKey(userObject, "password"), {});`,
+const userWithoutPassword = Object.keys(userObject).reduce(removePropertyOfObject(userObject, "password"), {});`,
   steps: [
     {
       step: `Step 1: Delete the password of the following user object`,

@@ -1,6 +1,9 @@
 export const lesson = {
   title: "ES6 Variables",
-  description: [`Let's start by the beginning.`],
+  description: [
+    `Let's start by the beginning.`,
+    'Use the class on: ".src/app/demo/components/ES6/01-variables/01-variables.component";'
+  ],
   showContent: false,
   showResult: false
 };
@@ -107,19 +110,19 @@ const variables are block-scoped!`,
   steps: [
     {
       step: `Step 1: Add the following code inside the expectedFive method`,
-      code: `const i = 0;
-i = 1;
+      code: `const i = "defined";
+i = "new value";
 const j;`
     },
     {
-      step: `Step 2: Hit the button to see the answer`,
+      step: `Step 2: What kind of error do you have?`,
       code: `Do we have any error?`
     },
     {
       step: `Step 3: Comment out the errors or fix the problems to continue`,
-      code: `const i = 0;
-//i = 1;
-//const j;`
+      code: `const i = "defined";
+// i = "new value";
+// const j;`
     }
   ]
 };
@@ -134,15 +137,14 @@ const does allow variable mutation (only objects/arrays are mutable in JS)`,
       step: `Step 1: Add the following code inside the expectedSix method`,
       code: `const a = [1];
 const b = a;
-console.log('Exercise 6: a === b ', a === b); // true
+// this.results6 = \`a === b, \${a === b}\`; // true
 
 b.push(2);
-console.log('Exercise 6: a === b ', a === b); // true
+// this.results6 = \`a === b, \${a === b}\`; // true
 
 const obj = {};
-obj['i'] = 1;
-console.log('Exercise 6: obj ', obj);
-this.results6 = { arr: a, obj: obj };`
+obj["i"] = 1;
+this.results6 = obj;`
     },
     {
       step: `Step 2: Hit the button to see the answer`,
@@ -161,11 +163,13 @@ const does allow variable mutation (only objects/arrays are mutable in JS)`,
   steps: [
     {
       step: `Step 1: Add the following code inside the expectedSeven method`,
-      code: `console.log('Exercise 7, a: ', a);
+      code: `    this.results7 = \`Exercise 7, a: \${a}\`;
 var a = 2;
-console.log('Exercise 7, b: ', b); 
-console.log('Exercise 7, c: ', c);
-let c = 2;`
+// console.log('Exercise 7, b: ', b);
+// console.log('Exercise 7, c: ', c);
+let c = 2;
+
+// this.results7 = \`Exercise 7, a: \${a}\`;`
     },
     {
       step: `Step 2: Hit the button to see the answer`,

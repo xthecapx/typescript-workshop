@@ -5,17 +5,6 @@ interface BooleanObjectMap {
   [propertie: string]: boolean;
 }
 
-interface BankAccount {
-  money: number;
-  deposit: (val: number) => void;
-}
-
-interface MySelfAccount {
-  name: string;
-  bankAccount: BankAccount;
-  hobbies: string[];
-}
-
 @Component({
   selector: "app-types",
   templateUrl: "./01-types.component.html"
@@ -32,7 +21,7 @@ export class TypesComponent {
   public readonly activity7 = activities.activity7;
 
   // Store the result of the activities
-  public results1: { name: string; age: number; hasHobbies: boolean };
+  public results1: string;
   public results2: {
     arrayNumbers: number[];
     arrayStrings: Array<string>;
@@ -45,7 +34,7 @@ export class TypesComponent {
     n: null;
   };
   public results6: string;
-  public results8: boolean;
+  public results7: any;
 
   // Exercise one
   public exerciseOne() {
@@ -55,18 +44,12 @@ export class TypesComponent {
     myAge = 29;
     hasHobbies = true;
 
-    this.results1 = {
-      name: myName,
-      age: myAge,
-      hasHobbies: hasHobbies
-    };
+    this.results1 = `myName: ${myName}, myAge: ${myAge}, hasHobbies: ${hasHobbies}`;
   }
 
   // Exercise two
   public exerciseTwo() {
-    let arrayNumbers: number[],
-      arrayStrings: Array<string>,
-      oneNumberOneString: [string, number];
+    let arrayNumbers: number[], arrayStrings: Array<string>, oneNumberOneString: [string, number];
 
     arrayNumbers = [2, 0, 1, 8];
     arrayStrings = ["Cristian", "Marquez"];
@@ -138,6 +121,17 @@ export class TypesComponent {
 
   // Exercise seven
   public exerciseSeven() {
+    interface BankAccount {
+      money: number;
+      deposit: (val: number) => void;
+    }
+
+    interface MySelfAccount {
+      name: string;
+      bankAccount: BankAccount;
+      hobbies: string[];
+    }
+
     let bankAccount: BankAccount = {
       money: 2000,
       deposit(value: number): void {
@@ -150,5 +144,7 @@ export class TypesComponent {
       bankAccount: bankAccount,
       hobbies: ["Gaming", "Skateboard"]
     };
+
+    this.results7 = myself;
   }
 }

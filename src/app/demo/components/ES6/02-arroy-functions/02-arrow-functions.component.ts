@@ -63,7 +63,7 @@ export class ArrowFunctionComponent {
       return { sayHi: GREET + NAME };
     } */
 
-    const greetingsParamsObject = (greet, name) => ({
+    const greetingsParamsObject = (greet = "Greetings", name = "traveler") => ({
       sayHi: `${greet} ${name}`
     });
 

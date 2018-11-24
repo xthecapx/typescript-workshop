@@ -85,5 +85,10 @@
   [description]="activity7.description"
   [steps]="activity7.steps"
   [solution]="activity7.solution"
+  [result]="results7"
 >
+  <button class="btn btn-primary" (click)="exerciseSeven()">Verify 7</button>
+
+  <br /><br />
+  <ng-container *ngIf="results7"></ng-container>
 </app-activity>

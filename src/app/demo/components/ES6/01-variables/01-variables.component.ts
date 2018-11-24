@@ -23,9 +23,11 @@ export class VariablesComponent {
   public results2: string;
   public results3: number;
   public results4: string;
+  public results5: string;
   public results6: {};
+  public results7: string;
   public results8: boolean;
-  
+
   // Exercise one
   public exerciseOne() {
     // Write here
@@ -47,7 +49,7 @@ export class VariablesComponent {
       x = "inside";
     }
     foo();
-    this.results2 = x; 
+    this.results2 = x;
   }
 
   // Exercise three
@@ -57,50 +59,53 @@ export class VariablesComponent {
     if (true) {
       var i = 1;
     }
-    
+
     this.results3 = i;
   }
 
   // Exercise four
   public exerciseFour() {
-    let i = 'outside';
+    let i = "outside";
 
     if (true) {
-      let i = 'inside';
+      let i = "inside";
     }
-    
+
     this.results4 = i;
   }
 
   // Exercise five
   public exerciseFive() {
-    const i = 0;
-    // i = 1;
+    const i = "defined";
+    // i = "new value";
     // const j;
+    console.log(i);
+    this.results5 = i;
   }
 
   // Exercise six
   public exerciseSix() {
     const a = [1];
     const b = a;
-    console.log('Exercise 6: a === b ', a === b); // true
-    
+    // this.results6 = `a === b, ${a === b}`; // true
+
     b.push(2);
-    console.log('Exercise 6: a === b ', a === b); // true
-    
+    // this.results6 = `a === b, ${a === b}`; // true
+
     const obj = {};
-    obj['i'] = 1;
-    console.log('Exercise 6: obj ', obj);
-    this.results6 = { arr: a, obj: obj };
+    obj["i"] = 1;
+    this.results6 = obj;
   }
 
   // Exercise seven
   public exerciseSeven() {
-    console.log('Exercise 7, a: ', a);
+    this.results7 = `Exercise 7, a: ${a}`;
     var a = 2;
-    // console.log('Exercise 7, b: ', b); 
+    // console.log('Exercise 7, b: ', b);
     // console.log('Exercise 7, c: ', c);
     let c = 2;
+
+    // this.results7 = `Exercise 7, a: ${a}`;
   }
 
   // Exercise eight

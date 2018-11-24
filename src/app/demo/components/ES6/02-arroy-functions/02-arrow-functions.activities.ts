@@ -1,7 +1,8 @@
 export const lesson = {
   title: "Arrows Functions",
   description: [
-    `On this sections you will learn about the new way to define function with the fat arrow operator "=>".`
+    `On this sections you will learn about the new way to define function with the fat arrow operator "=>".`,
+    'Use the class on: ".src/app/demo/components/ES6/02-arroy-functions/02-arrow-functions.component";'
   ],
   showContent: false,
   showResult: false
@@ -64,8 +65,8 @@ export const activity3 = {
 export const activity4 = {
   title: "Javascript functions #4",
   description: ["Create functions using ES6"],
-  solution: `const greetingsParamsObject = (greet, name) => ({
-  sayHi: \`\${greet} ${name}\`
+  solution: `const greetingsParamsObject = (greet = "Greetings", name = "traveler") => ({
+  sayHi: \`\${greet} \${name}\`
 });`,
   steps: [
     {
@@ -87,7 +88,43 @@ export const activity4 = {
 export const activity5 = {
   title: "Javascript functions #5",
   description: ["Create functions using ES6"],
-  solution: `const pets = {
+  solution: `* Using bind: 
+var pets = {
+  names: ['Baron', 'Chief', '18'],
+  owner: 'Cristian',
+  description: function() {
+    return this.names.map(function(pet) {
+      return \`\${this.owner} knows an awesome dog named \${pet}.\`
+    }.bind(this));
+  }
+};
+
+* Using context
+var pets = {
+  names: ['Baron', 'Chief', '18'],
+  owner: 'Cristian',
+  description: function() {
+    return this.names.map(function(pet) {
+      return \`\${this.owner} knows an awesome dog named \${pet}.\`
+    }, pets);
+  }
+};
+
+* Using closure
+var pets = {
+  names: ['Baron', 'Chief', '18'],
+  owner: 'Cristian',
+  description: function() {
+    var sefl = this;
+
+    return this.names.map(function(pet) {
+      return \`\${sefl.owner} knows an awesome dog named \${pet}.\`
+    });
+  }
+};
+  
+*ES6: 
+const pets = {
   names: ["Baron", "Chief", "18"],
   owner: "Cristian",
   description: function() {
@@ -119,7 +156,52 @@ export const activity5 = {
 export const activity6 = {
   title: "Javascript functions the final challenge",
   description: ["Create functions using ES6"],
-  solution: `class Prefixer {
+  solution: `* Using clousure
+function Prefixer(prefix) {
+  this.prefix = prefix;
+}
+Prefixer.prototype.prefixArray = function(arr) {
+  var that = this; // (A)
+  return arr.map(function(x) {
+    return that.prefix + x;
+  });
+};
+
+* Using context
+function Prefixer(prefix) {
+  this.prefix = prefix;
+}
+Prefixer.prototype.prefixArray = function(arr) {
+  return arr.map(function(x) {
+    return this.prefix + x;
+  }, this); // (A)
+};
+
+* Using bind
+function Prefixer(prefix) {
+  this.prefix = prefix;
+}
+Prefixer.prototype.prefixArray = function(arr) {
+  return arr.map(
+    function(x) {
+      return this.prefix + x;
+    }.bind(this)
+  ); // (A)
+};
+
+* Using arrow function
+function Prefixer(prefix) {
+  this.prefix = prefix;
+}
+Prefixer.prototype.prefixArray = function(arr) {
+  return arr.map(x => {
+    return this.prefix + x;
+  });
+};
+
+
+* Using Classes (Poetry) !!!!  
+class Prefixer {
   constructor(private prefix) {}
 
   prefixArray(arr) {
