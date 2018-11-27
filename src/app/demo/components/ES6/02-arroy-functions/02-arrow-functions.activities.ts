@@ -27,8 +27,8 @@ export const activity1 = {
 };
 
 export const activity2 = {
-  title: "Javascript functions #2",
-  description: ["Create functions using ES6"],
+  title: "Javascript ES6 functions #2",
+  description: ["Create ES6 functions (Parameters)"],
   solution: `const greetings = name => \`hello \${name}\`;`,
   steps: [
     {
@@ -46,7 +46,7 @@ export const activity2 = {
 
 export const activity3 = {
   title: "Javascript functions #3",
-  description: ["Create functions using ES6"],
+  description: ["Create ES6 functions (Returning objects)"],
   solution: `const greetingsObject = name => ({ sayHi: \`hello \${name}\` });`,
   steps: [
     {
@@ -64,7 +64,7 @@ export const activity3 = {
 
 export const activity4 = {
   title: "Javascript functions #4",
-  description: ["Create functions using ES6"],
+  description: ["Create ES6 functions (Default values)"],
   solution: `const greetingsParamsObject = (greet = "Greetings", name = "traveler") => ({
   sayHi: \`\${greet} \${name}\`
 });`,
@@ -87,7 +87,7 @@ export const activity4 = {
 
 export const activity5 = {
   title: "Javascript functions #5",
-  description: ["Create functions using ES6"],
+  description: ["Create functions using ES6 (Context)", "Keep the browser console open"],
   solution: `* Using bind: 
 var pets = {
   names: ['Baron', 'Chief', '18'],
@@ -155,7 +155,7 @@ const pets = {
 
 export const activity6 = {
   title: "Javascript functions the final challenge",
-  description: ["Create functions using ES6"],
+  description: ["Create functions using ES6 (Using class)"],
   solution: `* Using clousure
 function Prefixer(prefix) {
   this.prefix = prefix;
@@ -200,7 +200,7 @@ Prefixer.prototype.prefixArray = function(arr) {
 };
 
 
-* Using Classes (Poetry) !!!!  
+* Using class (Poetry) !!!!  
 class Prefixer {
   constructor(private prefix) {}
 

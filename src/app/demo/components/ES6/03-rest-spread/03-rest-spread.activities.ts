@@ -11,14 +11,15 @@ export const lesson = {
 export const activity1 = {
   title: "Destructing objects #1",
   description: ["Destructuring objects"],
-  solution: `const obj1 = { a: 1, b: 2, c: 3, d: 4 };
-ES5: 
+  solution: `* ES5: 
+var obj1 = { a: 1, b: 2, c: 3, d: 4 };
 var a = obj1.a;
 var b = obj1.b;
 var c = obj1.c;
 var d = obj1.d;
 
-ES6:
+* ES6:
+const obj1 = { a: 1, b: 2, c: 3, d: 4 };
 const { a, b, c, d } = obj1;`,
   steps: [
     {
@@ -39,11 +40,19 @@ const { a, b, c, d } = obj1;`,
 
 export const activity2 = {
   title: "Creating objects #2",
-  description: ["Create an object where the key and value match"],
-  solution: `ES5:
+  description: ["Create objects based on variables"],
+  solution: `* ES5:
+var a = 1;
+var b = 2;
+var c = 3;
+var d = 4;
 var obj1 = { a: a, b: b, c: c, d: d };
 
-ES6:
+* ES6:
+const a = 1;
+const b = 2;
+const c = 3;
+const d = 4;
 const obj1 = { a, b, c, d };`,
   steps: [
     {
@@ -65,11 +74,13 @@ const obj1 = { a, b, c, d };`,
 export const activity3 = {
   title: "Javascript arrays #3",
   description: ["Create new variables for each element of the array"],
-  solution: `ES5:
+  solution: `* ES5:
+var iterable = ["a", "b"];
 var a = iterable[0];
 var b = iterable[1];
 
-ES6:
+* ES6:
+const iterable = ["a", "b"];
 const [a, b] = iterable;`,
   steps: [
     {
@@ -86,10 +97,12 @@ const [a, b] = iterable;`,
 export const activity4 = {
   title: "Javascript arrays #4",
   description: ["Find the greatest value in an array"],
-  solution: `ES5:
+  solution: `* ES5:
+var array = [1, 20, 3, 5, -2];
 var maxOfArray = Math.max.apply(Math, array);
 
-ES6:
+* ES6:
+const array = [1, 20, 3, 5, -2];
 const maxOfArray = Math.max(...array);`,
   steps: [
     {
@@ -106,10 +119,14 @@ const maxOfArray = Math.max(...array);`,
 export const activity5 = {
   title: "Javascript arrays #5",
   description: ["Apped data to an array"],
-  solution: `ES5:
+  solution: `* ES5:
+var appendMe = [1, 2, 3];
+var newArray = [55, 20];
 newArray.push.apply(newArray, numbersE);
 
-ES6:
+* ES6:
+let appendMe = [1, 2, 3];
+let newArray = [55, 20];
 newArray.push(...numbersE);`,
   steps: [
     {
@@ -127,13 +144,13 @@ let newArray = [55, 20];`
 export const activity6 = {
   title: "Javascript functions #6",
   description: ["Create alias when destructuring arrays"],
-  solution: `ES5:
-const obj = getAddres();
-const c = obj.city;
-const s = obj.state;
-const z = obj.zip;
+  solution: `* ES5:
+var obj = getAddress();
+var c = obj.city;
+var s = obj.state;
+var z = obj.zip;
   
-ES6:
+* ES6:
 let { city: c, state: s, zip: z } = getAddress();`,
   steps: [
     {
@@ -162,14 +179,14 @@ export const activity7 = {
   description: [
     "Create a method and pass the variables args, args2 as parameters. return a string with the name an age. the default value for the age should be 20"
   ],
-  solution: `ES5;
+  solution: `* ES5;
 function myName (obj) {
   var age = obj.age ? obj.age : 20;
 
   return obj.name + age;
 }
 
-ES6:
+* ES6:
 const myName = ({ name, age = 20 }) => {
   return name + age;
 };`,
@@ -192,7 +209,7 @@ const args2 = { name: "Aura" };`
 export const activity8 = {
   title: "Destructiring in practice #8",
   description: ["Create a function to return the number of arguments but not the first"],
-  solution: `ES5;
+  solution: `* ES5:
 function listAnimals() {
   var animals = Array.prototype.slice.call(arguments, 1);
 
@@ -203,7 +220,7 @@ function listAnimals() {
   return arguments[0] + animals.length;
 }
 
-ES6:
+* ES6:
 const listAnimals = (a, ...rest) => {
   rest.forEach(animal => console.log(animal));
   return a + rest.length;
@@ -221,7 +238,7 @@ const listAnimals = (a, ...rest) => {
 );`
     },
     {
-      step: `Step 2: Create the required function (listAnimals)`,
+      step: `Step 2: Create the listAnimals function`,
       code: `Create a function to return the number of arguments but not the first`
     },
     {
@@ -234,7 +251,7 @@ const listAnimals = (a, ...rest) => {
 export const activity9 = {
   title: "Dynamic property object #9",
   description: ["Assign a dynamic key to the object"],
-  solution: `ES5;
+  solution: `* ES5;
 var updatedUserDinamyc = {
   name: user.name
 };

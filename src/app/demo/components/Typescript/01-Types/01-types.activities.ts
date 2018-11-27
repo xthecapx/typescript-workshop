@@ -16,11 +16,13 @@ let decimal: number = 6;
 let hex: number = 0xf00d;
 let binary: number = 0b1010;
 let octal: number = 0o744;
-let color: string = "blue";`,
+let color: string = "blue";
+
+A: let myName: string, myAge: number, hasHobbies: boolean;`,
   steps: [
     {
       step: `Step 1: Add typing to the following variables defined inside expectedOne method`,
-      code: `let myName: string, myAge: number, hasHobbies: boolean;
+      code: `let myName, myAge, hasHobbies;
 
 myName = "Cristian Marquez";
 myAge = 29;
@@ -44,7 +46,11 @@ let x: [string, number];
 // Initialize it
 x = ["hello", 10]; // OK
 // Initialize it incorrectly
-x = [10, "hello"]; // Error`,
+x = [10, "hello"]; // Error
+
+A: let arrayNumbers: number[], 
+    arrayStrings: Array<string>, 
+    oneNumberOneString: [string, number];`,
   steps: [
     {
       step: `Step 1: Add typing to the following variables defined inside expectedTwo method`,
@@ -76,7 +82,13 @@ export const activity3 = {
 let c: Color = Color.Green;
 
 enum Color {Red = 1, Green = 2, Blue = 4}
-let c: Color = Color.Green;`,
+let c: Color = Color.Green;
+
+A: enum Colors {
+  Red = 100,
+  Green,
+  Blue
+}`,
   steps: [
     {
       step: `Step 1: Replace the Colors object with an Enum`,
@@ -104,6 +116,7 @@ this.results3 = {
     }
   ]
 };
+
 export const activity4 = {
   title: "Any, Void, Null and Undefined #4",
   description: ["Understanding the nully values"],
@@ -185,7 +198,10 @@ export const activity6 = {
   return v1 * v2;
 }
 
-let myMultiply: (a: number, b: number) => number;`,
+let myMultiply: (a: number, b: number) => number;
+
+myMultiply = multiply;
+this.results6 = \`Happy \${myMultiply(2, 1009)}\`;`,
   steps: [
     {
       step: `Step 1: Add typing to the following code inside the expectedSix method`,
@@ -217,7 +233,20 @@ interface MySelfAccount {
   name: string;
   bankAccount: BankAccount;
   hobbies: string[];
-}`,
+}
+
+let bankAccount: BankAccount = {
+  money: 2000,
+  deposit(value: number): void {
+    this.money += value;
+  }
+};
+
+let myself: MySelfAccount = {
+  name: "Cristian Marquez",
+  bankAccount: bankAccount,
+  hobbies: ["Gaming", "Skateboard"]
+};`,
   steps: [
     {
       step: `Step 1: Add typing to the following code inside the expectedSeven method`,
@@ -235,7 +264,7 @@ let myself = {
 };`
     },
     {
-      step: `Step 2: Hit the button to see the object`,
+      step: `Step 2: Hit the button to see myself`,
       code: ``
     }
   ]

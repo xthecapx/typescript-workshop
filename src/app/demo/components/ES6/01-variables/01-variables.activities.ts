@@ -112,7 +112,9 @@ const variables are block-scoped!`,
       step: `Step 1: Add the following code inside the expectedFive method`,
       code: `const i = "defined";
 i = "new value";
-const j;`
+const j;
+console.log(i);
+this.results5 = i;`
     },
     {
       step: `Step 2: What kind of error do you have?`,
@@ -122,7 +124,9 @@ const j;`
       step: `Step 3: Comment out the errors or fix the problems to continue`,
       code: `const i = "defined";
 // i = "new value";
-// const j;`
+// const j;
+console.log(i);
+this.results5 = i;`
     }
   ]
 };
@@ -130,8 +134,7 @@ const j;`
 export const activity6 = {
   title: "STEP 6: const",
   description: ["Understanding const mutation"],
-  solution: `// { arr: [ 1, 2 ], obj: { i: 1 } }
-const does allow variable mutation (only objects/arrays are mutable in JS)`,
+  solution: `const does allow variable mutation (only objects/arrays are mutable in JS)`,
   steps: [
     {
       step: `Step 1: Add the following code inside the expectedSix method`,
@@ -148,7 +151,8 @@ this.results6 = obj;`
     },
     {
       step: `Step 2: Hit the button to see the answer`,
-      code: `Do we have any error?`
+      code: `Do we have any error?
+A: { "i": 1 }`
     }
   ]
 };
@@ -173,15 +177,17 @@ let c = 2;
     },
     {
       step: `Step 2: Hit the button to see the answer`,
-      code: `Do we have any error?`
+      code: `Do you see any error?`
     },
     {
       step: `Step 3: Comment out the errors or fix the problems to continue`,
-      code: `console.log('Exercise 7, a: ', a);
+      code: `    this.results7 = \`Exercise 7, a: \${a}\`;
 var a = 2;
-console.log('Exercise 7, b: ', b); 
-console.log('Exercise 7, c: ', c);
-let c = 2;`
+// console.log('Exercise 7, b: ', b);
+// console.log('Exercise 7, c: ', c);
+let c = 2;
+
+// this.results7 = \`Exercise 7, a: \${a}\`;`
     }
   ]
 };

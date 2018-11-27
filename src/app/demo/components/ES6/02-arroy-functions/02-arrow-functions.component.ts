@@ -25,100 +25,50 @@ export class ArrowFunctionComponent {
 
   // Exercise one
   public exerciseOne() {
-    /* function sayHi() {
-      return 'Greeting' ;
-    } */
-    const sayHi = () => "Greeting";
+    function sayHi() {
+      return "Greeting";
+    }
 
     this.results1 = sayHi();
   }
 
   // Exercise two
   public exerciseTwo() {
-    /* function greetings(name) {
+    function greetings(name) {
       return "hello " + name;
-    } */
-
-    const greetings = name => `hello ${name}`;
+    }
 
     this.results2 = greetings("Cristian");
   }
 
   // Exercise three
   public exerciseThree() {
-    /* function greetingsObject(name) {
+    function greetingsObject(name) {
       return { sayHi: "hello " + name };
-    } */
-    const greetingsObject = name => ({ sayHi: `hello ${name}` });
+    }
 
     this.results3 = greetingsObject("Cristian Marquez");
   }
 
   // Exercise four
   public exerciseFour() {
-    /* function greetingsParamsObject(greet, name) {
+    function greetingsParamsObject(greet, name) {
       var NAME = name ? name : "traveler";
       var GREET = greet ? greet : "Greetings";
 
-      return { sayHi: GREET + NAME };
-    } */
+      return { sayHi: GREET + " " + NAME };
+    }
 
-    const greetingsParamsObject = (greet = "Greetings", name = "traveler") => ({
-      sayHi: `${greet} ${name}`
-    });
-
-    this.results4 = greetingsParamsObject("Greetings", "traveler");
+    this.results4 = greetingsParamsObject("Greetings", undefined);
   }
 
   // Exercise five
   public exerciseFive() {
-    /* var pets = {
-      names: ['Baron', 'Chief', '18'],
-      owner: 'Cristian',
-      description: function() {
-        return this.names.map(function(pet){
-          return `${this.owner} knows an awesome dog named ${pet}.`
-        });
-      }
-    };
-
     var pets = {
-      names: ['Baron', 'Chief', '18'],
-      owner: 'Cristian',
-      description: function() {
-        return this.names.map(function(pet) {
-          return `${this.owner} knows an awesome dog named ${pet}.`
-        }.bind(this));
-      }
-    };
-
-    var pets = {
-      names: ['Baron', 'Chief', '18'],
-      owner: 'Cristian',
-      description: function() {
-        return this.names.map(function(pet) {
-          return `${this.owner} knows an awesome dog named ${pet}.`
-        }, pets);
-      }
-    };
-
-    var pets = {
-      names: ['Baron', 'Chief', '18'],
-      owner: 'Cristian',
-      description: function() {
-        var sefl = this;
-
-        return this.names.map(function(pet) {
-          return `${sefl.owner} knows an awesome dog named ${pet}.`
-        });
-      }
-    }; */
-
-    const pets = {
       names: ["Baron", "Chief", "18"],
       owner: "Cristian",
       description: function() {
-        return this.names.map(pet => {
+        return this.names.map(function(pet) {
           return `${this.owner} knows an awesome dog named ${pet}.`;
         });
       }
@@ -129,7 +79,7 @@ export class ArrowFunctionComponent {
 
   // Exercise six
   public exerciseSix() {
-    /* function Prefixer(prefix) {
+    function Prefixer(prefix) {
       this.prefix = prefix;
     }
     Prefixer.prototype.prefixArray = function(arr) {
@@ -141,53 +91,6 @@ export class ArrowFunctionComponent {
         return this.prefix + x; // (C)
       });
     };
-
-    function Prefixer(prefix) {
-      this.prefix = prefix;
-    }
-    Prefixer.prototype.prefixArray = function(arr) {
-      var that = this; // (A)
-      return arr.map(function(x) {
-        return that.prefix + x;
-      });
-    };
-
-    function Prefixer(prefix) {
-      this.prefix = prefix;
-    }
-    Prefixer.prototype.prefixArray = function(arr) {
-      return arr.map(function(x) {
-        return this.prefix + x;
-      }, this); // (A)
-    };
-
-    function Prefixer(prefix) {
-      this.prefix = prefix;
-    }
-    Prefixer.prototype.prefixArray = function(arr) {
-      return arr.map(
-        function(x) {
-          return this.prefix + x;
-        }.bind(this)
-      ); // (A)
-    };
-
-    function Prefixer(prefix) {
-      this.prefix = prefix;
-    }
-    Prefixer.prototype.prefixArray = function(arr) {
-      return arr.map(x => {
-        return this.prefix + x;
-      });
-    };*/
-
-    class Prefixer {
-      constructor(private prefix) {}
-
-      prefixArray(arr) {
-        return arr.map(x => this.prefix + x);
-      }
-    }
 
     var pre = new Prefixer("Hi ");
     this.results6 = pre.prefixArray(["Cristian", "Marquez"]);

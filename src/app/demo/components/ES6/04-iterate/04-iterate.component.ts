@@ -27,6 +27,8 @@ export class IterateComponent {
 
   // Exercise one
   public exerciseOne() {
+    // Given the following collection
+    // create a new array with the id of the officers
     const officers = [
       { id: 20, name: "Captain Piett" },
       { id: 24, name: "General Veers" },
@@ -34,30 +36,15 @@ export class IterateComponent {
       { id: 88, name: "Commander Jerjerrod" }
     ];
 
-    // What we need
-    const result = [20, 24, 56, 88];
-
-    /* const officersIds = [];
-
-    var arr = [0, 1, 2, 3];
-    for (var i = 0, len = officers.length; i < len; i++) {
-      officersIds.push(officers[i].id);
-    } */
-
-    // forEach() may be preferable when you’re not trying to change the data in your array, but instead want to just do something with it
-    /* officers.forEach(function(officer) {
-      officersIds.push(officer.id);
-    }); */
-
-    //And map() might be preferable when changing or altering data. Not only is it faster but it returns a new Array.
-
-    const officersIds = officers.map(officer => officer.id);
+    const officersIds = [];
 
     this.results1 = officersIds;
   }
 
   // Exercise two
   public exerciseTwo() {
+    // Given the following collection
+    // Find the avarage age of the pilots
     const pilots = [
       {
         id: 10,
@@ -81,30 +68,15 @@ export class IterateComponent {
       }
     ];
 
-    // Get the avarage age of the pilos
-
-    /* var totalYears = 0;
-    for (var i = 0, len = pilots.length; i < len; i++) {
-      totalYears += pilots[i].years;
-    }
-    
-    var totalYears = 0; 
-    pilots.forEach(function(pilot) {
-      totalYears += pilot.years;
-    }); */
-
-    // const totalYears = pilots.reduce((acc, pilot) => acc + pilot.years, 0);
-
-    const sumOf = property => {
-      return (acc, obj) => acc + obj[property];
-    };
-    const totalYears = pilots.reduce(sumOf("years"), 0);
-
+    // Find the avarage age of the pilos
+    const totalYears = 10;
     this.results2 = totalYears / pilots.length;
   }
 
   // Exercise three
   public exerciseThree() {
+    // Given the following collection
+    // Create the devastator!!!!!
     const constructicons = [
       {
         name: "Scrapper",
@@ -144,46 +116,14 @@ export class IterateComponent {
       }
     ];
 
-    /* var devastator = {
-      name: "Devastator",
-      team: "Decepticon",
-      form: {}
-    };
-
-    for (var i = 0, len = constructicons.length; i < len; i++) {
-      var transformer = constructicons[i];
-      devastator.form[transformer.bodyPart] = transformer.name;
-    } */
-
-    /* const devastator = constructicons.reduce(
-      (combiner, transformer) => {
-        combiner.form[transformer.bodyPart] = transformer.name;
-        return combiner;
-      },
-      {
-        name: "Devastator",
-        team: "Decepticon",
-        form: {}
-      }
-    ); */
-
-    const assemble = (combiner, transformer) => {
-      combiner.form[transformer.bodyPart] = transformer.name;
-
-      return combiner;
-    };
-
-    const devastator = constructicons.reduce(assemble, {
-      name: "Devastator",
-      team: "Decepticon",
-      form: {}
-    });
-
+    const devastator = {};
     this.results3 = devastator;
   }
 
   // Exercise four
   public exerciseFour() {
+    // Given the following collection
+    // Find the object with the property "name" equal to "Long Haul"
     const constructicons = [
       {
         name: "Scrapper",
@@ -223,99 +163,35 @@ export class IterateComponent {
       }
     ];
 
-    // var findingObject;
-    // for (var i = 0, len = constructicons.length; i < len; i++) {
-    //   var transformer = constructicons[i];
-
-    //   if (transformer.name === "Long Haul") {
-    //     findingObject = transformer;
-    //   }
-    // }
-
-    // const isEqualOnProperty = (property, findString) => {
-    //   return filteringObject => {
-    //     return findString === filteringObject[property];
-    //   };
-    // };
-
-    const isEqualOnProperty = (property, findString) => filteringObject => findString === filteringObject[property];
-    const findingObject = constructicons.find(isEqualOnProperty("name", "Long Haul"));
-
+    const findingObject = {};
     this.results4 = findingObject;
   }
 
   // Exercise five
   public exerciseFive() {
+    // Remove all the 1 inside the array
     const userIds = [1, 5, 7, 3, 6, 1];
-    // var numbersDifferent = [];
-    // for (var i = 0, len = userIds.length; i < len; i++) {
-    //   var userId = userIds[i];
-
-    //   if (userId !== 1) {
-    //     numbersDifferent.push(userId);
-    //   }
-    // }
-
-    const notEqual = findNumber => filteringNumber => findNumber !== filteringNumber;
-    const numbersDifferent = userIds.filter(notEqual(1));
-
-    this.results5 = numbersDifferent;
+    const withoutOne = [];
+    this.results5 = withoutOne;
   }
 
   // Exercise six
   public exerciseSix() {
+    // Update the title of the first post in the following collection
     const posts = [{ id: 1, title: "Title 1" }, { id: 2, title: "Title 2" }];
-    // var updatedPosts = [];
-    // for (var i = 0, len = posts.length; i < len; i++) {
-    //   var post = posts[i];
-
-    //   if (post.id === 1) {
-    //     post.title = "Updated Title 1";
-    //   }
-
-    //   updatedPosts.push(post);
-    // }
-
-    // const updatedPosts = posts.map(p => (p.id !== 1 ? p : { ...p, title: "Updated Title 1" }));
-
-    const updateTitleOfElementWithId = ({ idValue, newTitle }) => obj =>
-      obj.id !== idValue ? obj : { ...obj, title: newTitle };
-    const updatedPosts = posts.map(updateTitleOfElementWithId({ idValue: 1, newTitle: "Updated Title 1" }));
-
+    const updatedPosts = [];
     this.results6 = updatedPosts;
   }
 
   // Exercise eight
   public exerciseSeven() {
+    // Delete the pass of the following object
     const userObject = {
       name: "Shivek Khurana",
       age: 23,
       password: "SantaCl@use"
     };
-    // const notEqual = findNumber => filteringNumber => findNumber !== filteringNumber;
-
-    // const createCollection = object => key => {
-    //   return {
-    //     [key]: object[key]
-    //   };
-    // };
-    // const mergeCollection = (accumulator, current) => {
-    //   return {
-    //     ...accumulator,
-    //     ...current
-    //   };
-    // };
-
-    // const userWithoutPassword = Object.keys(userObject)
-    //   .filter(notEqual("password"))
-    //   .map(createCollection(userObject))
-    //   .reduce(mergeCollection, {});
-
-    const removePropertyOfObject = (object, keyToDelete) => (accumulator, currentKey) => {
-      return currentKey === keyToDelete ? accumulator : { ...accumulator, [currentKey]: object[currentKey] };
-    };
-    const userWithoutPassword = Object.keys(userObject).reduce(removePropertyOfObject(userObject, "password"), {});
-
+    const userWithoutPassword = {};
     this.results7 = userWithoutPassword;
   }
 }

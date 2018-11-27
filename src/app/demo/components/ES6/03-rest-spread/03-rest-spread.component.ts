@@ -31,14 +31,12 @@ export class RestSpreadComponent {
 
   // Exercise one
   public exerciseOne() {
-    /* var obj1 = { a: 1, b: 2, c: 3, d: 4 };
-    var a = obj1.a;
-    var b = obj1.b;
-    var c = obj1.c;
-    var d = obj1.d; */
-
-    const obj1 = { a: 1, b: 2, c: 3, d: 4 };
-    const { a, b, c, d } = obj1;
+    var obj1 = { a: 1, b: 2, c: 3, d: 4 };
+    // Create variables with each property of the following object
+    var a = "";
+    var b = "";
+    var c = "";
+    var d = "";
 
     this.results1 = {
       a: a,
@@ -50,50 +48,47 @@ export class RestSpreadComponent {
 
   // Exercise two
   public exerciseTwo() {
+    // Rewrite the following line using ES6
+    // Create a new object where obj.a = 1; obj.b = 2; ...
     var a = 1;
     var b = 2;
     var c = 3;
     var d = 4;
-    /* var obj1 = { a: a, b: b, c: c, d: d }; */
-
-    const obj1 = { a, b, c, d };
+    var obj1 = {};
 
     this.results2 = obj1;
   }
 
   // Exercise three
   public exerciseThree() {
+    // Create a new variable for each element of the following array
     var iterable = ["a", "b"];
-    /*     var a = iterable[0];
-    var b = iterable[1]; */
-
-    const [a, b] = iterable;
+    var a = "a";
+    var b = "b";
 
     this.results3 = { a, b };
   }
 
   // Exercise four
   public exerciseFour() {
-    const array = [1, 20, 3, 5, -2];
-    // var maxOfArray = Math.max.apply(Math, array);
+    // Find the greatest value of the following array
+    var array = [1, 20, 3, 5, -2];
 
-    const maxOfArray = Math.max(...array);
-    this.results4 = maxOfArray;
+    // this.results4 = maxOfArray;
   }
 
   // Exercise five
   public exerciseFive() {
+    // Append "appendMe" array in to the "newArray" array
     let appendMe = [1, 2, 3];
     let newArray = [55, 20];
-    // newArray.push.apply(newArray, numbersE);
-    newArray.push(...appendMe);
 
     this.results5 = newArray;
   }
 
   // Exercise six
   public exerciseSix() {
-    // Create Alias
+    // Create variables named c, s, z for each property of the object returned by the getAddress method
     const getAddress = () => {
       return {
         city: "city",
@@ -101,11 +96,9 @@ export class RestSpreadComponent {
         zip: "zip"
       };
     };
-    /*     const obj = getAddres();
-    const c = obj.city;
-    const s = obj.state;
-    const z = obj.zip; */
-    let { city: c, state: s, zip: z } = getAddress();
+    var c = "city";
+    var s = "state";
+    var z = "zip";
 
     this.results6 = { c, s, z };
   }
@@ -114,15 +107,11 @@ export class RestSpreadComponent {
   public exerciseSeven() {
     const args = { name: "Cristian", age: 29 };
     const args2 = { name: "Aura" };
-    // Create a method and pass args, args2 as parameters. return the name an age in a single array. the default value for age parameter is 20
-    /* function myName(obj) {
-      var age = obj.age ? obj.age : 20;
+    // Create a method and pass args, args2 as parameters.
+    // return the name an age in a single array.
+    // the default value for age must be 20
 
-      return obj.name + age;
-    } */
-    const myName = ({ name, age = 20 }) => {
-      return name + age;
-    };
+    function myName(p) {}
 
     this.results7 = {
       args: myName(args),
@@ -132,37 +121,23 @@ export class RestSpreadComponent {
 
   // Exercise eigth
   public exerciseEigth() {
-    // Create a function to return the number of animals but not the first
-    const animals = ["The total of animals is: ", "🐯", "🐰", "🐘", "🐴", "🐥"];
-    /* function listAnimals() {
-      var animals = Array.prototype.slice.call(arguments, 1);
+    // given the following parameters when calling a function
+    // "The total of animals is: ", "🐯", "🐰", "🐘", "🐴", "🐥"
+    // Create a funciton to return the following value
+    // "The total of animals is: 5"
+    // Where the total is all the length of all parameters without the first
+    function listAnimals() {}
 
-      animals.forEach(function(animal) {
-        console.log(animal);
-      });
-
-      return arguments[0] + animals.length;
-    } */
-
-    const listAnimals = (a, ...rest) => {
-      rest.forEach(animal => console.log(animal));
-      return a + rest.length;
-    };
-
-    this.results8 = listAnimals("The total of animals is: ", "🐯", "🐰", "🐘", "🐴", "🐥");
+    // this.results8 = listAnimals("The total of animals is: ", "🐯", "🐰", "🐘", "🐴", "🐥");
   }
 
   // Exercise nine
   public exerciseNine() {
+    // Create a new user property where the name is equal
+    // to the dynamicKey value
     const user = { name: "Shivek Khurana" };
     const dynamicKey = "wearsSpectacles";
-
-    // var updatedUserDinamyc = {
-    //   name: user.name
-    // };
-    // updatedUserDinamyc[dynamicKey] = true;
-
-    const updatedUserDinamyc = { ...user, [dynamicKey]: true };
+    const updatedUserDinamyc = {};
 
     this.results9 = updatedUserDinamyc;
   }

@@ -34,7 +34,7 @@ Not only is it faster but it returns a new Array.
 const officersIds = officers.map(officer => officer.id);`,
   steps: [
     {
-      step: `Step 1: Having the officers collection, create a new array with the id of the officers`,
+      step: `Step 1: Given the officers collection, create a new array with the id of the officers`,
       code: `const officers = [
   { id: 20, name: "Captain Piett" },
   { id: 24, name: "General Veers" },
@@ -255,25 +255,25 @@ const findingObject = constructicons.find(isEqualOnProperty("name", "Long Haul")
 
 export const activity5 = {
   title: "Javascript loops #5",
-  description: ["Remove all the 1 from the array"],
+  description: ["Remove all the 1 inside the array"],
   solution: `* ES5:
-var numbersDifferent = [];
+var withoutOne = [];
 for (var i = 0, len = userIds.length; i < len; i++) {
   var userId = userIds[i];
 
   if (userId !== 1) {
-    numbersDifferent.push(userId);
+    withoutOne.push(userId);
   }
 }
 
 * ES6:
-const numbersDifferent = userIds.filter((userId) => {
+const withoutOne = userIds.filter((userId) => {
   return userId !== 1;
 });
 
 * Poetry: Functional programming
 const notEqual = findNumber => filteringNumber => findNumber !== filteringNumber;
-const numbersDifferent = userIds.filter(notEqual(1));`,
+const withoutOne = userIds.filter(notEqual(1));`,
   steps: [
     {
       step: `Step 1: Remove all the 1 from the following array`,

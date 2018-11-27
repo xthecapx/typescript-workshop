@@ -30,90 +30,41 @@ export class VariablesComponent {
 
   // Exercise one
   public exerciseOne() {
-    // Write here
-    var x = "outside";
-
-    function foo() {
-      var x = "inside";
-    }
-    foo();
-    this.results1 = x;
+    // Write your code here
   }
 
   // Exercise two
   public exerciseTwo() {
-    // Write here
-    var x = "outside";
-
-    function foo() {
-      x = "inside";
-    }
-    foo();
-    this.results2 = x;
+    // Write your code here
   }
 
   // Exercise three
   public exerciseThree() {
-    var i = 0;
-
-    if (true) {
-      var i = 1;
-    }
-
-    this.results3 = i;
+    // Write your code here
   }
 
   // Exercise four
   public exerciseFour() {
-    let i = "outside";
-
-    if (true) {
-      let i = "inside";
-    }
-
-    this.results4 = i;
+    // Write your code here
   }
 
   // Exercise five
   public exerciseFive() {
-    const i = "defined";
-    // i = "new value";
-    // const j;
-    console.log(i);
-    this.results5 = i;
+    // Write your code here
   }
 
   // Exercise six
   public exerciseSix() {
-    const a = [1];
-    const b = a;
-    // this.results6 = `a === b, ${a === b}`; // true
-
-    b.push(2);
-    // this.results6 = `a === b, ${a === b}`; // true
-
-    const obj = {};
-    obj["i"] = 1;
-    this.results6 = obj;
+    // Write your code here
   }
 
   // Exercise seven
   public exerciseSeven() {
-    this.results7 = `Exercise 7, a: ${a}`;
-    var a = 2;
-    // console.log('Exercise 7, b: ', b);
-    // console.log('Exercise 7, c: ', c);
-    let c = 2;
-
-    // this.results7 = `Exercise 7, a: ${a}`;
+    // Write your code here
   }
 
   // Exercise eight
   public exerciseEight() {
-    function isEqualTo5(n) {
-      return !(n - five);
-      var five = 5;
-    }
-    this.results8 = isEqualTo5(4);
+    // Write your code here
   }
 }
