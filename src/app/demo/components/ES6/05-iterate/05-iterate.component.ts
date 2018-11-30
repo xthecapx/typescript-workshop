@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
-import * as activities from "./04-iterate.activities";
+import * as activities from "./05-iterate.activities";
 
 @Component({
   selector: "app-js-interate",
-  templateUrl: "./04-iterate.component.html"
+  templateUrl: "./05-iterate.component.html"
 })
 export class IterateComponent {
   // Store the info about the activities

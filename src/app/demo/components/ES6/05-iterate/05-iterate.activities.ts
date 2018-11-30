@@ -2,7 +2,7 @@ export const lesson = {
   title: "Looping with javascript",
   description: [
     `On this sections you will understand how to loop with Javascript`,
-    'Use the class on: ".src/app/demo/components/ES6/04-iterate/04-iterate.component";'
+    'Use the class on: ".src/app/demo/components/ES6/05-iterate/05-iterate.component";'
   ],
   showContent: false,
   showResult: false
